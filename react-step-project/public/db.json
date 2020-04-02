@@ -1,0 +1,40 @@
+{
+    "notes": [
+        {
+            "id": 1,
+            "noteTitle": "Morning Exercise",
+            "noteDescription": "I'm baby street art selvage vexillologist fixie, pinterest air plant truffaut chillwave schlitz palo santo bitters forage put a bird on it. Vaporware subway tile hammock succulents woke chillwave, iPhone lo-fi fashion axe literally single-origin coffee church-key cloud bread. PBR&B listicle squid, hella man braid tacos post-ironic small batch wolf shaman scenester hashtag iPhone. Bicycle rights next level cray, umami etsy distillery ugh neutra edison bulb you probably haven't heard of them food truck offal street art wolf venmo. Intelligentsia mustache iPhone taxidermy cornhole, enamel pin skateboard single-origin coffee woke authentic dreamcatcher. VHS XOXO meditation 8-bit godard, kickstarter cred four loko organic stumptown. Shoreditch mlkshk unicorn street art, tacos irony selfies.",
+            "color": "red",
+            "status": true
+        },
+        {
+            "id": 2,
+            "noteTitle": "Eat Something",
+            "noteDescription": "I'm baby street art selvage vexillologist fixie, pinterest air plant truffaut chillwave schlitz palo santo bitters forage put a bird on it. Vaporware subway tile hammock succulents woke chillwave, iPhone lo-fi fashion axe literally single-origin coffee church-key cloud bread. PBR&B listicle squid, hella man braid tacos post-ironic small batch wolf shaman scenester hashtag iPhone. Bicycle rights next level cray, umami etsy distillery ugh neutra edison bulb you probably haven't heard of them food truck offal street art wolf venmo. Intelligentsia mustache iPhone taxidermy cornhole, enamel pin skateboard single-origin coffee woke authentic dreamcatcher. VHS XOXO meditation 8-bit godard, kickstarter cred four loko organic stumptown. Shoreditch mlkshk unicorn street art, tacos irony selfies.",
+            "color": "green",
+            "status": true
+        },
+        {
+            "id": 3,
+            "noteTitle": "Play Games",
+            "noteDescription": "I'm baby street art selvage vexillologist fixie, pinterest air plant truffaut chillwave schlitz palo santo bitters forage put a bird on it. Vaporware subway tile hammock succulents woke chillwave, iPhone lo-fi fashion axe literally single-origin coffee church-key cloud bread. PBR&B listicle squid, hella man braid tacos post-ironic small batch wolf shaman scenester hashtag iPhone. Bicycle rights next level cray, umami etsy distillery ugh neutra edison bulb you probably haven't heard of them food truck offal street art wolf venmo. Intelligentsia mustache iPhone taxidermy cornhole, enamel pin skateboard single-origin coffee woke authentic dreamcatcher. VHS XOXO meditation 8-bit godard, kickstarter cred four loko organic stumptown. Shoreditch mlkshk unicorn street art, tacos irony selfies.",
+            "color": "red",
+            "status": false
+        },
+        {
+            "id": 4,
+            "noteTitle": "Evening Exercise",
+            "noteDescription": "I'm baby street art selvage vexillologist fixie, pinterest air plant truffaut chillwave schlitz palo santo bitters forage put a bird on it. Vaporware subway tile hammock succulents woke chillwave, iPhone lo-fi fashion axe literally single-origin coffee church-key cloud bread. PBR&B listicle squid, hella man braid tacos post-ironic small batch wolf shaman scenester hashtag iPhone. Bicycle rights next level cray, umami etsy distillery ugh neutra edison bulb you probably haven't heard of them food truck offal street art wolf venmo. Intelligentsia mustache iPhone taxidermy cornhole, enamel pin skateboard single-origin coffee woke authentic dreamcatcher. VHS XOXO meditation 8-bit godard, kickstarter cred four loko organic stumptown. Shoreditch mlkshk unicorn street art, tacos irony selfies.",
+            "color": "red",
+            "status": true
+        },
+        {
+            "id": 5,
+            "noteTitle": "Watch Movie",
+            "noteDescription": "I'm baby street art selvage vexillologist fixie, pinterest air plant truffaut chillwave schlitz palo santo bitters forage put a bird on it. Vaporware subway tile hammock succulents woke chillwave, iPhone lo-fi fashion axe literally single-origin coffee church-key cloud bread. PBR&B listicle squid, hella man braid tacos post-ironic small batch wolf shaman scenester hashtag iPhone. Bicycle rights next level cray, umami etsy distillery ugh neutra edison bulb you probably haven't heard of them food truck offal street art wolf venmo. Intelligentsia mustache iPhone taxidermy cornhole, enamel pin skateboard single-origin coffee woke authentic dreamcatcher. VHS XOXO meditation 8-bit godard, kickstarter cred four loko organic stumptown. Shoreditch mlkshk unicorn street art, tacos irony selfies.",
+            "color": "green",
+            "status": true
+        }
+
+    ]
+}
