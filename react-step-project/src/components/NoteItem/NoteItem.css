@@ -1,12 +1,9 @@
 .note-item {
-    display: flex;
-    background-color: pink;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
+    text-decoration: none;
 }
 
 .note-title-holder {
+    text-decoration: none;
     width: 400px;
     border-top: 2px solid purple;
     border-left: 2px solid purple;
