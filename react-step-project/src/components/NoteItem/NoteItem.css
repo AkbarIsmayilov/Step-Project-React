@@ -1,0 +1,35 @@
+.note-item {
+    display: flex;
+    background-color: pink;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.note-title-holder {
+    width: 400px;
+    border-top: 2px solid purple;
+    border-left: 2px solid purple;
+    border-right: 2px solid purple;
+    border-bottom: 1px solid purple;
+    cursor: pointer;
+}
+.note-title {
+    color: orange;
+}
+.note-body-holder {
+    width: 400px;
+    border-top: 1px solid purple;
+    border-left: 2px solid purple;
+    border-right: 2px solid purple;
+    border-bottom: 2px solid purple;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.note-body {
+    color: orange;
+}
+
+
+

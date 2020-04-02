@@ -1,24 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
+import Home from './components/Home/Home';
+import {Link, Route} from "react-router-dom";
 import './App.css';
+import logo from './notes.png';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <header className={'header'}>
+            <Link className={'logo-holder'} to={'/'}>
+                <img className={'logo'} src={logo} alt=""/>
+                <h1 className={'logo-text'}>NotesApp</h1>
+            </Link>
+            <div className={'links-holder'}>
+                <Link className={'actual'} to={'/actual'}>Actual</Link>
+                <Link className={'archive'} to={'/archive'}>Archive</Link>
+                <div className={'vertical-lines'}></div>
+                <Link className={'create'} to={'/create'}>Create</Link>
+            </div>
+        </header>
+        <main>
+            <Route path={'/'} exact={true} render = {() => <Home show={'all'}/>} />
+            <Route path={'/actual'}  render = {() => <Home show={'actual'}/>} />
+            <Route path={'/archive'}  render = {() => <Home show={'archive'}/>} />
+            <Route path={'/create'} render = {() => <p>Create Note is gonna be here</p>} />
+        </main>
     </div>
   );
 }
