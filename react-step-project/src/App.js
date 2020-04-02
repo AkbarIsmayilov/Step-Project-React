@@ -1,4 +1,5 @@
 import React from 'react';
+import CreateForm from "./pages/CreateForm/CreateForm";
 import Home from './components/Home/Home';
 import {Link, Route} from "react-router-dom";
 import './App.css';
@@ -7,6 +8,7 @@ import logo from './notes.png';
 function App() {
   return (
     <div className="App">
+
         <header className={'header'}>
             <Link className={'logo-holder'} to={'/'}>
                 <img className={'logo'} src={logo} alt=""/>
