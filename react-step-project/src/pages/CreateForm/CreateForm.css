@@ -1,3 +1,48 @@
+input:focus, textarea:focus, select:focus, button:focus {
+  outline: none;
+}
 
+.form-color-palette {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin: auto;
+}
+.form-textarea {
+  resize: none;
+  padding: 10px 17px;
+  font-size: 15px;
+  border-radius: 6px;
+  border: 2px solid #777777;
+}
+.form-textarea:focus {
+  border: 2px solid black;
+}
+.form-title-input {
+  padding: 10px 17px;
+  margin: 15px 0;
+  border-radius: 6px;
+  border: 2px solid #777777;
+  font-size: 19px;
+}
+.form-title-input:focus {
+  border: 2px solid black;
+}
+.form-create-button {
+  padding: 10px 0;
+  background-color: #777777;
+  font-size: 22px;
+  border: none;
+  color: white;
+  border-radius: 8px;
+}
+.form-create-button:active {
+  background-color: black;
+}
 
 /*# sourceMappingURL=CreateForm.css.map */
