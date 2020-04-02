@@ -4,6 +4,7 @@ import {Link, Route} from "react-router-dom";
 import './App.css';
 import logo from './notes.png';
 import SingleNote from "./components/SingleNote/SingleNote";
+import CreateForm from "./pages/CreateForm/CreateForm";
 
 
 class App extends Component {
@@ -46,7 +47,7 @@ class App extends Component {
                     <Route path={'/'} exact={true} render = {() => <Home show={'all'}/>} />
                     <Route path={'/actual'}  render = {() => <Home show={'actual'}/>} />
                     <Route path={'/archive'}  render = {() => <Home show={'archive'}/>} />
-                    <Route path={'/create'} render = {() => <p>Create Note is gonna be here</p>} />
+                    <Route path={'/create'} render = {() => <CreateForm/>} />
 
                     {routes}
                 </main>
