@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from "react-router-dom";
 import './NoteItem.css'
 import {Link} from "react-router-dom";
 
@@ -7,7 +8,7 @@ class NoteItem extends Component {
         super(props);
     }
 
-    render () {
+    render() {
         return (
             <Link to={`/notes/${this.props.ob.id}`}>
                 <div id={this.props.ob.id} className={'noteItem'} onClick={this.props.noteClicked}>
@@ -21,6 +22,7 @@ class NoteItem extends Component {
             </Link>
 
     );
+
     }
 }
 
