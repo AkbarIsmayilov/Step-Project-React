@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, {useState} from 'react';
 import {CirclePicker} from 'react-color';
 import PropTypes from 'prop-types';
 
@@ -17,7 +17,8 @@ const CreateForm = ({typeOfForm = "create"}) => {
     const handleChangeComplete = (color, event) => {
         setState(
             { ...state,
-                bgColor: color.hex})
+                bgColor: color.hex});
+        console.log(state.bgColor);
     };
 
     const handleChangeNote  = (e) => {
@@ -39,6 +40,19 @@ const CreateForm = ({typeOfForm = "create"}) => {
     const handleSubmitNote = (e) =>  {
         e.preventDefault();
         console.log(state);
+
+        let data = {
+            noteTitle: `${state.inputs.title}`,
+            noteDescription: `${state.inputs.text}`,
+            color: `${state.bgColor}`,
+            isCompleted: "true"
+        }
+        console.log(JSON.stringify(data));
+
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', 'http://localhost:3333/notes', true);
+        xhr.setRequestHeader("Content-Type","application/json" );
+        xhr.send(JSON.stringify(data));
 
     }
 
@@ -69,7 +83,7 @@ const CreateForm = ({typeOfForm = "create"}) => {
                     />
                 </div>
             </div>
-            <button disabled={!state.isSubmittable} className="form-create-button">{typeOfForm.toUpperCase()}</button>
+            <input type={'submit'} value={typeOfForm.toUpperCase()} disabled={!state.isSubmittable} className="form-create-button"/>
         </form>
     );
 };
