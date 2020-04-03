@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Link, Route} from "react-router-dom";
-import NoteItem from '../NoteItem/NoteItem';
 import './Home.css';
+import NoteItem from "../NoteItem/NoteItem";
 
 class Home extends Component {
     constructor(props) {

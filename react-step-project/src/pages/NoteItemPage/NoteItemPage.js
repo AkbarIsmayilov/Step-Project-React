@@ -1,16 +1,52 @@
-import React from 'react';
-import {Redirect, Route} from 'react-router';
-import {Link} from 'react-router-dom'
+import React, {useState} from 'react';
 import './NotePageItem.scss'
+import ModalWindow from "../../components/ModalWindow/ModalWindow";
 const NoteItemPage = (props) => {
     const {noteTitle,noteDescription,color,id,status} =props.self;
     const styles = {backgroundColor: color};
+
+    const [editButton, setEditButton] = useState(true),
+        [modal, setModal] = useState(false);
+
+
+    const singleTitle = React.createRef(),
+            singleText = React.createRef();
+
+    const editNoteHandler = () => {
+
+        if (editButton === false){
+            const newNote = {
+                ...props.self,
+                noteTitle: singleTitle.current.value,
+                noteDescription: singleText.current.value
+            };
+
+            fetch( `http://localhost:3333/notes/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(newNote),
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log('Success:', data);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
+
+
+
+        setEditButton(!editButton);
+
+    };
 
     const deleteNoteHandler = () => {
         fetch(`http://localhost:3333/notes/${id}`, {
             method: 'DELETE'
         })
-
     };
 
     const archiveNoteHandler = () => {
@@ -34,20 +70,30 @@ const NoteItemPage = (props) => {
                 console.error('Error:', error);
             });
     };
+    const openModal = () => {
+            setModal(true);
+    };
+
+    const closeModal = (e) => {
+
+        if (e.target == e.currentTarget) {
+            setModal(false);
+        }
+    };
 
 
         return (
-        <div className={"note-container"}>
-            <div style={styles} className={"note-item"}>
-                <div className="note-title">{noteTitle}</div>
-                <div className="note-text">{noteDescription}</div>
+        <div className={"single-container"}>
+            <div style={styles} className={"single-item"}>
+                <input ref={singleTitle} disabled={editButton ? true : false} className="single-title" value={editButton ? noteTitle: null} style={styles}/>
+                <textarea ref={singleText} disabled={editButton ? true : false} className="single-text" cols="20" rows="30" style={styles} value={editButton ?noteDescription : null}></textarea>
             </div>
-            <div className="note-buttons">
-                <button  className="note-btn">EDIT</button>
-                <button onClick={archiveNoteHandler} className="note-btn">{status ? "ARCHIVE" : "ACTUALISE"}</button>
-                <button onClick={deleteNoteHandler} className="note-btn"> <Link to={'/'}>DELETE</Link></button>
-
+            <div className="single-buttons">
+                <button  className="single-btn" onClick={editNoteHandler}>{editButton ? "EDIT" : "SAVE"}</button>
+                <button onClick={archiveNoteHandler} className="single-btn">{status ? "ARCHIVE" : "ACTUALISE"}</button>
+                <button onClick={openModal} className="single-btn">DELETE</button>
             </div>
+            {modal ? <ModalWindow closeModal={closeModal} delete={deleteNoteHandler}/> : null}
         </div>
     );
 };
