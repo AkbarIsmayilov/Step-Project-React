@@ -5,6 +5,7 @@ import './SingleNote.css';
 class SingleNote extends Component {
     render() {
         return (
+
             <Route path={`/notes/${this.props.ob.id}`} render={() =>
                 <div className={'single-item'}>
                     <div className={'single-title-holder'}>
