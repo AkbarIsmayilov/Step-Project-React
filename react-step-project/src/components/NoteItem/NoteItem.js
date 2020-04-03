@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from "react-router-dom";
 import './NoteItem.css'
 
 class NoteItem extends Component {
@@ -6,16 +7,18 @@ class NoteItem extends Component {
         super(props);
     }
 
-    render () {
+    render() {
         return (
-            <div id={this.props.ob.id} className={'noteItem'} onClick={this.props.noteClicked}>
+            <Link id={this.props.ob.id} className={'note-item'} onClick={this.props.noteClicked}
+                  to={`/notes/${this.props.ob.id}`}>
                 <div className={'note-title-holder'}>
                     <h2 className={'note-title'}>{this.props.ob.noteTitle}</h2>
                 </div>
                 <div className={'note-body-holder'}>
                     <p className={'note-body'}>{this.props.ob.noteDescription}</p>
                 </div>
-            </div>
+            </Link>
+
         );
     }
 }

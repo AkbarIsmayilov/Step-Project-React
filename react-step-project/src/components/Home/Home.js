@@ -28,7 +28,7 @@ class Home extends Component {
     }
 
     render() {
-        let all = this.state.notes
+        let all = this.state.notes;
         let actual = this.state.notes.filter(note => note.status === true);
         let archive = this.state.notes.filter(note => note.status === false);
         let notes;

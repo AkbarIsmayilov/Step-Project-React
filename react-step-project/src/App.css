@@ -63,3 +63,9 @@
     margin-right: 30px;
     padding: 0 5px;
 }
+
+.main-holder {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
