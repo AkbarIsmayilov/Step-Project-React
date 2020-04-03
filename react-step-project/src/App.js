@@ -1,11 +1,33 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import CreateForm from "./pages/CreateForm/CreateForm";
+import NoteItemPage from "./pages/NoteItemPage/NoteItemPage";
 import Home from './components/Home/Home';
-import {Link, Route} from "react-router-dom";
-import './App.css';
 import logo from './notes.png';
+import {Link} from "react-router-dom";
+import {Route} from "react-router";
+import './App.css';
 
-function App() {
+function App() {const apiUrl = 'http://localhost:3333/notes/';
+    const [state, setState] = useState([]
+    );
+
+    useEffect(() => {
+        fetch(apiUrl)
+            .then(res => res.json())
+            .then(data => setState(data))
+    },[apiUrl]);
+
+
+    const singleNoteItemHandler = ({match}) => {
+        console.log(state);
+
+        const note = state.find( item => item.id == match.params.noteID);
+         if (note ){ return <NoteItemPage  self={note}/>   }
+
+    }
+
+
+
   return (
     <div className="App">
 
@@ -25,7 +47,8 @@ function App() {
             <Route path={'/'} exact={true} render = {() => <Home show={'all'}/>} />
             <Route path={'/actual'}  render = {() => <Home show={'actual'}/>} />
             <Route path={'/archive'}  render = {() => <Home show={'archive'}/>} />
-            <Route path={'/create'} render = {() => <p>Create Note is gonna be here</p>} />
+            <Route path={'/create'} render = {() => <CreateForm/>} />
+            <Route path={'/notes/:noteID'} render={singleNoteItemHandler} />
         </main>
     </div>
   );
