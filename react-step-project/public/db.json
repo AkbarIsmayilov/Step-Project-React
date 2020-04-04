@@ -32,14 +32,14 @@
       "noteTitle": "Note Templates & Examples",
       "noteDescription": "A note is not just a piece of information, it is a tool for some people to use it as an aid to memory, expressing their feelings through thank you note or use it as a future reference. In some other cases, a note can also be used as an agreement for financial purposes, one good example for this is a promissory note.",
       "color": "#00ffff",
-      "status": true,
+      "status": false,
       "id": 13
     },
     {
       "noteTitle": "Ask questions. Get expert answers.",
       "noteDescription": "Ask questions. Get expert answers.Ask questions. Get expert answers.Ask questions. Get expert answers.Ask questions. Get expert answers.Ask questions. Get expert answers.Ask questions. Get expert answers.Ask questions. Get expert answers.Ask questions. Get expert answers.Ask questions. Get expert answers.Ask questions. Get expert answers.",
       "color": "#ffff00",
-      "status": true,
+      "status": false,
       "id": 14
     },
     {
