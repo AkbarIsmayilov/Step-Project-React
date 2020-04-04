@@ -1,8 +1,23 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Link} from "react-router-dom";
+import {Route} from "react-router";
+import {NotesContext} from "../../components/NotesContext/NotesContext";
+import Home from "../Home/Home";
+import CreateForm from "../CreateForm/CreateForm";
+import NoteItemPage from "../NoteItemPage/NoteItemPage";
 import logo from "../../notes.png";
 
-const Layout = ({children}) => {
+
+const Layout = () => {
+    const [notes, setNotes] = useContext(NotesContext);
+    const singleNoteItemHandler = ({match}) => {
+        const note = notes.find(item => item.id == match.params.noteID);
+        if (note) {
+            return <NoteItemPage self={note}/>
+        }
+
+    }
+
     return (
         <div>
             <header className={'header'}>
@@ -17,7 +32,13 @@ const Layout = ({children}) => {
                     <Link className={'create'} to={'/create'}>Create</Link>
                 </div>
             </header>
-            {children}
+            <main>
+                <Route path={'/'} exact={true} render={() => <Home show={'all'}/>}/>
+                <Route path={'/actual'} render={() => <Home show={'actual'}/>}/>
+                <Route path={'/archive'} render={() => <Home show={'archive'}/>}/>
+                <Route path={'/create'} component={CreateForm}/>
+                <Route path={'/notes/:noteID'} render={singleNoteItemHandler}/>
+            </main>
         </div>
     );
 };
