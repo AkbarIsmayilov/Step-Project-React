@@ -55,18 +55,19 @@ const NoteItemPage = (props) => {
     };
 
     const deleteNoteHandler = () => {
+
         fetch(`http://localhost:3333/notes/${id}`, {
             method: 'DELETE'
         })
     };
-    const openModal = () => {
-            setModal(true);
-    };
+    // const openModal = () => {
+    //         setModal(true);
+    // };
 
     const closeModal = (e) => {
 
         if (e.target == e.currentTarget) {
-            setModal(false);
+            setModal(!modal);
         }
     };
 
@@ -80,7 +81,7 @@ const NoteItemPage = (props) => {
             <div className="single-buttons">
                 <button  className="single-btn" onClick={editNoteHandler}>{editButton ? "EDIT" : "SAVE"}</button>
                 <button onClick={archiveNoteHandler} className="single-btn">{status ? "ARCHIVE" : "ACTUALISE"}</button>
-                <button onClick={openModal} className="single-btn">DELETE</button>
+                <button onClick={closeModal} className="single-btn">DELETE</button>
             </div>
             {modal ? <ModalWindow closeModal={closeModal} delete={deleteNoteHandler}/> : null}
         </div>

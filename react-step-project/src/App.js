@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import CreateForm from "./pages/CreateForm/CreateForm";
 import NoteItemPage from "./pages/NoteItemPage/NoteItemPage";
-import Home from './components/Home/Home';
-import logo from './notes.png';
+import Home from './pages/Home/Home';
+import Layout from "./pages/Layout/Layout";
 import {Link} from "react-router-dom";
 import {Route} from "react-router";
+import logo from './notes.png';
 import './App.css';
-
 
 import {NotesProvider} from './components/NotesContext/NotesContext';
 
@@ -37,28 +37,18 @@ function App() {
     return (
         <NotesProvider>
             <div className="App">
-
-                <header className={'header'}>
-                    <Link className={'logo-holder'} to={'/'}>
-                        <img className={'logo'} src={logo} alt=""/>
-                        <h1 className={'logo-text'}>NotesApp</h1>
-                    </Link>
-                    <div className={'links-holder'}>
-                        <Link className={'actual'} to={'/actual'}>Actual</Link>
-                        <Link className={'archive'} to={'/archive'}>Archive</Link>
-                        <div className={'vertical-lines'}></div>
-                        <Link className={'create'} to={'/create'}>Create</Link>
-                    </div>
-                </header>
-                <main>
-                    <Route path={'/'} exact={true} render={() => <Home show={'all'}/>}/>
-                    <Route path={'/actual'} render={() => <Home show={'actual'}/>}/>
-                    <Route path={'/archive'} render={() => <Home show={'archive'}/>}/>
-                    <Route path={'/create'} render={() => <CreateForm/>}/>
-                    <Route path={'/notes/:noteID'} render={singleNoteItemHandler}/>
-                </main>
+                <Layout>
+                    <main>
+                        <Route path={'/'} exact={true} render={() => <Home show={'all'}/>}/>
+                        <Route path={'/actual'} render={() => <Home show={'actual'}/>}/>
+                        <Route path={'/archive'} render={() => <Home show={'archive'}/>}/>
+                        <Route path={'/create'} render={() => <CreateForm/>}/>
+                        <Route path={'/notes/:noteID'} render={singleNoteItemHandler}/>
+                    </main>
+                </Layout>
             </div>
-        </NotesProvider>
+
+</NotesProvider>
     );
 }
 
