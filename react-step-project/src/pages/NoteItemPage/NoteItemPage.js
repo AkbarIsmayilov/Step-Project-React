@@ -61,14 +61,14 @@ const NoteItemPage = (props) => {
             method: 'DELETE'
         }).then(() =>{});
     };
-    // const openModal = () => {
-    //         setModal(true);
-    // };
+    const openModal = () => {
+            setModal(true);
+    };
 
     const closeModal = (e) => {
 
         if (e.target == e.currentTarget) {
-            setModal(!modal);
+            setModal(false);
         }
     };
 
@@ -82,7 +82,7 @@ const NoteItemPage = (props) => {
             <div className="single-buttons">
                 <button  className="single-btn" onClick={editNoteHandler}>{editButton ? "EDIT" : "SAVE"}</button>
                 <button onClick={archiveNoteHandler} className="single-btn">{status ? "ARCHIVE" : "ACTUALISE"}</button>
-                <button onClick={closeModal} className="single-btn">DELETE</button>
+                <button onClick={openModal} className="single-btn">DELETE</button>
             </div>
             {modal ? <ModalWindow closeModal={closeModal} delete={deleteNoteHandler}/> : null}
         </div>
