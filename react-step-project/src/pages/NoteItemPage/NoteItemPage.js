@@ -8,6 +8,7 @@ const NoteItemPage = (props) => {
     const [editButton, setEditButton] = useState(true),
         [modal, setModal] = useState(false);
 
+
     const singleTitle = React.createRef(),
             singleText = React.createRef();
 
@@ -57,7 +58,7 @@ const NoteItemPage = (props) => {
     const deleteNoteHandler = () => {
         fetch(`http://localhost:3333/notes/${id}`, {
             method: 'DELETE'
-        })
+        }).then(() =>{});
     };
     const openModal = () => {
             setModal(true);

@@ -7,7 +7,6 @@ import {Link} from "react-router-dom";
 import {Route} from "react-router";
 import './App.css';
 
-
 import {NotesProvider} from './components/NotesContext/NotesContext';
 
 function App() {
@@ -54,7 +53,7 @@ function App() {
                     <Route path={'/'} exact={true} render={() => <Home show={'all'}/>}/>
                     <Route path={'/actual'} render={() => <Home show={'actual'}/>}/>
                     <Route path={'/archive'} render={() => <Home show={'archive'}/>}/>
-                    <Route path={'/create'} render={() => <CreateForm/>}/>
+                    <Route path={'/create'} component={CreateForm}/>
                     <Route path={'/notes/:noteID'} render={singleNoteItemHandler}/>
                 </main>
             </div>
