@@ -1,3 +1,4 @@
+
 .note-item {
     text-decoration: none;
 }
@@ -5,27 +6,28 @@
 .note-title-holder {
     text-decoration: none;
     width: 400px;
-    border-top: 2px solid purple;
-    border-left: 2px solid purple;
-    border-right: 2px solid purple;
-    border-bottom: 1px solid purple;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 1px solid black;
     cursor: pointer;
 }
 .note-title {
-    color: orange;
+    color: black;
 }
 .note-body-holder {
     width: 400px;
-    border-top: 1px solid purple;
-    border-left: 2px solid purple;
-    border-right: 2px solid purple;
-    border-bottom: 2px solid purple;
+    height: 300px;
+    border-top: 1px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
     margin-bottom: 20px;
     cursor: pointer;
 }
 
 .note-body {
-    color: orange;
+    color: black;
 }
 
 
