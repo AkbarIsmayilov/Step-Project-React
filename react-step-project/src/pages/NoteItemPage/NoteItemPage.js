@@ -8,9 +8,27 @@ const NoteItemPage = (props) => {
     const [editButton, setEditButton] = useState(true),
         [modal, setModal] = useState(false);
 
-
     const singleTitle = React.createRef(),
             singleText = React.createRef();
+
+
+    const updateData = (newData) => {
+        fetch( `http://localhost:3333/notes/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newData),
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                console.log('Success:', data);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    }
+
 
     const editNoteHandler = () => {
 
@@ -21,32 +39,11 @@ const NoteItemPage = (props) => {
                 noteDescription: singleText.current.value
             };
 
-            fetch( `http://localhost:3333/notes/${id}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(newNote),
-            })
-                .then((response) => response.json())
-                .then((data) => {
-                    console.log('Success:', data);
-                })
-                .catch((error) => {
-                    console.error('Error:', error);
-                });
+            updateData(newNote);
         }
-
-
 
         setEditButton(!editButton);
 
-    };
-
-    const deleteNoteHandler = () => {
-        fetch(`http://localhost:3333/notes/${id}`, {
-            method: 'DELETE'
-        })
     };
 
     const archiveNoteHandler = () => {
@@ -54,21 +51,13 @@ const NoteItemPage = (props) => {
             ...props.self,
             status:!status
         };
+        updateData(newNote);
+    };
 
-        fetch( `http://localhost:3333/notes/${id}`, {
-            method: 'PUT', // or 'PUT'
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(newNote),
+    const deleteNoteHandler = () => {
+        fetch(`http://localhost:3333/notes/${id}`, {
+            method: 'DELETE'
         })
-            .then((response) => response.json())
-            .then((data) => {
-                console.log('Success:', data);
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
     };
     const openModal = () => {
             setModal(true);
