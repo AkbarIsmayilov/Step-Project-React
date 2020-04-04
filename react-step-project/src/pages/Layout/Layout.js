@@ -18,6 +18,7 @@ const Layout = () => {
 
     }
 
+
     return (
         <div>
             <header className={'header'}>
@@ -32,6 +33,7 @@ const Layout = () => {
                     <Link className={'create'} to={'/create'}>Create</Link>
                 </div>
             </header>
+
             <main>
                 <Route path={'/'} exact={true} render={() => <Home show={'all'}/>}/>
                 <Route path={'/actual'} render={() => <Home show={'actual'}/>}/>
@@ -39,6 +41,7 @@ const Layout = () => {
                 <Route path={'/create'} component={CreateForm}/>
                 <Route path={'/notes/:noteID'} render={singleNoteItemHandler}/>
             </main>
+
         </div>
     );
 };
