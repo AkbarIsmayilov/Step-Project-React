@@ -44,14 +44,13 @@ input:focus, textarea:focus, select:focus, button:focus {
 
   &-create-button {
     padding: 10px 0;
-    background-color: #777777;
+    background-color: black;
     font-size: 22px;
     border: none;
     color: white;
     border-radius: 8px;
-
-    &:active {
-      background-color: black;
+    &:disabled {
+      background-color: #777777;
     }
   }
 
