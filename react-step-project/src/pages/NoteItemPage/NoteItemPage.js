@@ -76,8 +76,8 @@ const NoteItemPage = (props) => {
         return (
         <div className={"single-container"}>
             <div style={styles} className={"single-item"}>
-                <input ref={singleTitle} disabled={editButton ? true : false} className="single-title" value={editButton ? noteTitle: null} style={styles}/>
-                <textarea ref={singleText} disabled={editButton ? true : false} className="single-text" cols="20" rows="30" style={styles} value={editButton ?noteDescription : null}></textarea>
+                <input ref={singleTitle} disabled={editButton} className="single-title" value={editButton ? noteTitle: null} style={styles}/>
+                <textarea ref={singleText} disabled={editButton} className="single-text" cols="20" rows="30" style={styles} value={editButton ?noteDescription : null}></textarea>
             </div>
             <div className="single-buttons">
                 <button  className="single-btn" onClick={editNoteHandler}>{editButton ? "EDIT" : "SAVE"}</button>

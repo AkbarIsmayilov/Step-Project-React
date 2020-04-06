@@ -4,8 +4,10 @@ import {CirclePicker} from 'react-color';
 import './CreateForm.scss'
 
 const CreateForm = (props) => {
+
+    const colors = ['yellowgreen', "yellow", 'pink', 'aqua', 'violet']
     let [state, setState] = useState({
-        bgColor: 'aqua',
+        bgColor: colors[Math.floor(Math.random() *4) + 1],
         inputs: {
             text: '',
             title: ''
@@ -93,7 +95,7 @@ const CreateForm = (props) => {
                     <CirclePicker
                         onChangeComplete={handleChangeComplete}
                         width={"210px"}
-                        colors={['yellowgreen', "yellow", 'pink', 'aqua', 'violet']}
+                        colors={colors}
                     />
                 </div>
             </div>
